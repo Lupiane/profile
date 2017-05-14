@@ -1,87 +1,110 @@
 body {
-  background-color: #C4CCD0;
+  background-color: #F4F1DE;
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
   color: #586E75;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5em;
 }
-
 h1, h2, h3 {
   font-family: 'Varela Round', sans-serif;
 }
-
 h1 {
-  font-size: 23px;
+  font-size: 24px;
   font-weight: 600;
- }
-
-
+}
 h2 {
   font-size: 20px;
   font-weight: 400;
- }
-
+}
 h3 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
 }
-
 a {
   text-decoration: none;
-  color: #9D858D;
+  color: #EF767A;
 }
-
-a:hover {
-  color: #F3D0DD;
+p {
+    text-align: justify;
 }
-
-
 .container {
-  width: 600px;
+  width: 800px;
   margin: auto;
 }
-
 .card {
   background: white;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
-  box-shadow: 0px 1px 2px 0px #858585
+  box-shadow: 0px 1px 2px 0px #858585;
 }
-
 .text-center {
   text-align: center;
 }
-
 .img-circle {
   border-radius: 50%;
-  width: 200px;
+  width: 180px;
 }
-
-.btn-red {
-  background-color: #9D858D ;
-  color: white;
-  font-weight: 500;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-#films td {
-  padding: 10px;
-}
-
-#films img {
-  width: 125px;
-}
-
 .list-inline {
   padding-left: 0;
-  font-size: 20px;
 }
-
 .list-inline li {
   display: inline-block;
-  padding: 20px;
+  padding: 10px 10px 10px 0;
 }
-
+.tagline{
+  font-style: oblique;
+}
+.btn-red {
+  background-color: #EF767A;
+  color: white;
+  font-size: 14px;
+  width: 75px;
+  padding: 5px 15px;
+  border-radius: 4px;
+  opacity: 0.7;
+}
+.hvr-trim {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+}
+.hvr-trim:before {
+  content: '';
+  position: absolute;
+  border: white solid 2px;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {
+  opacity: 1;
+}
+#bio-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.bio-text {
+  text-align: left;
+}
+#projects
+  h3 {
+    text-align: center;
+  }
+  td {
+  padding: 10px;
+}
+#projects img {
+  width: 100%;
+}
