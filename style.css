@@ -1,5 +1,10 @@
+html {
+  --buttonandlink: #EF767A;
+  --background: #F4F1DE;
+}
+
 body {
-  background-color: #F4F1DE;
+  background-color: var(--background);
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
   color: #586E75;
@@ -23,7 +28,7 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #EF767A;
+  color: var(--buttonandlink);
 }
 p {
     text-align: justify;
@@ -57,7 +62,7 @@ p {
   font-style: oblique;
 }
 .btn-red {
-  background-color: #EF767A;
+  background-color: var(--buttonandlink);
   color: white;
   font-size: 14px;
   width: 75px;
@@ -90,6 +95,13 @@ p {
 .hvr-trim:hover:before, .hvr-trim:focus:before, .hvr-trim:active:before {
   opacity: 1;
 }
+.color-update {
+  padding-top: 20px;
+  font-size: 12px;
+}
+.fa-paint-brush {
+  color: var(--buttonandlink);
+}
 #bio-card {
   display: flex;
   align-items: center;
@@ -107,4 +119,12 @@ p {
 }
 #projects img {
   width: 100%;
+}
+#controls {
+  opacity: 0;
+  height: 0;
+  transition: height 0.8s, visibility 0.1s, opacity 0.5s linear;
+  padding-top: 0;
+  margin-top: -15px;
+  margin-bottom: 0;
 }

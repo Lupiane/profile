@@ -15,30 +15,45 @@
   <body>
 
   <div class="container">
-    <div class="card text-center" id="bio-card">
-      <img src="images/IMG_8469.jpg" class="img-circle" alt="">
-      <div class="bio-text">
-        <h1>Pauline Gaget</h1>
-        <h2>FullStack ruby on rails developer</h2>
-        <p>Keep on coding. Keep on learning.</p>
-        <ul class="list-inline">
+    <div class=" card top-card-container">
+      <div class="text-center" id="bio-card">
+        <img src="images/IMG_8469.jpg" class="img-circle" alt="">
+        <div class="bio-text">
+          <h1>Pauline Gaget</h1>
+          <h2>FullStack ruby on rails developer</h2>
+          <p>Keep on coding. Keep on learning.</p>
+          <ul class="list-inline">
+            <li>
+              <a class ="btn-red hvr-trim" href="https://github.com/Lupiane" target="blank">
+                <i class="fa fa-github" aria-hidden="true"></i>
+                Github
+              </a>
+            </li>
+            <li>
+              <a class="btn-red hvr-trim" href="https://www.linkedin.com/in/pauline-gaget-06271933/" target="blank">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                Linkedin
+              </a>
+            </li>
+            <li>
+              <a class="btn-red hvr-trim" href="https://twitter.com/lupiane" target="blank">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                Twitter
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center color-update">
+        <p class='text-center'>Don't like the color scheme on this page? Change it!  <i class="fa fa-paint-brush" aria-hidden="true"></i></p>
+        <ul class="list-inline" id='controls'>
           <li>
-            <a class ="btn-red hvr-trim" href="https://github.com/Lupiane" target="blank">
-              <i class="fa fa-github" aria-hidden="true"></i>
-              Github
-            </a>
+            <label for="background">Background Color:</label>
+            <input id="background" type="color" name="background" value="#F4F1DE">
           </li>
           <li>
-            <a class="btn-red hvr-trim" href="https://www.linkedin.com/in/pauline-gaget-06271933/" target="blank">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-              Linkedin
-            </a>
-          </li>
-          <li>
-            <a class="btn-red hvr-trim" href="https://twitter.com/lupiane" target="blank">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-              Twitter
-            </a>
+            <label for="buttonandlink">Buttons and Links Color:</label>
+            <input id="buttonandlink" type="color" name="buttonandlink" value="#EF767A">
           </li>
         </ul>
       </div>
@@ -64,6 +79,7 @@
     </div>
 
 
+
     <div class="card text-center">
       <h2>About this page</h2>
       <p>
@@ -73,6 +89,37 @@
     </div>
   </div>
 
+  <script>
+
+    const controls = document.querySelector('#controls');
+    const brush = document.querySelector('.fa-paint-brush');
+    controls.style.visibility = 'hidden';
+
+    function toggleControls() {
+      if(controls.style.visibility === 'hidden') {
+        controls.style.visibility = 'visible';
+        controls.style.height = '35px'
+        controls.style.opacity = '1'
+        brush.style.setProperty(`color`, 'grey');
+      } else {
+        controls.style.visibility = 'hidden';
+        controls.style.height = '0'
+        controls.style.opacity = '0'
+        brush.style.setProperty(`color`, 'var(--buttonandlink)');
+      };
+    };
+
+    brush.addEventListener('click', toggleControls);
+
+    const inputs = document.querySelectorAll('.color-update input');
+
+    function updateColors() {
+      document.documentElement.style.setProperty(`--${this.name}`, this.value);
+    };
+
+    inputs.forEach(input => input.addEventListener('change', updateColors));
+
+  </script>
 </body>
 </html>
 
